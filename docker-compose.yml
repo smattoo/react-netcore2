@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  react-dotnetcore2:
+    image: react-dotnetcore2
+    build: .
+    ports:
+      - 8084:80

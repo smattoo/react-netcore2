@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "react-dotnetcore2",
+            "type": "coreclr",
+            "request": "launch",
+            "cwd": "/app",
+            "program": "/app/react-dotnetcore2.dll",
+            "sourceFileMap": {
+                "/app": "${workspaceRoot}/obj/Docker/publish/"
+            },
+            "pipeTransport": {
+                "pipeCwd": "${workspaceRoot}",
+                "pipeProgram": "docker",
+                "pipeArgs": ["exec","-i","react-dotnetcore2_1"],
+                "debuggerPath": "/vsdbg/vsdbg"
+            },            
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        }
+    ]
+}

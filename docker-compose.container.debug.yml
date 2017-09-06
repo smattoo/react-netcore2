@@ -1,0 +1,17 @@
+version: "2"
+
+services: 
+  react-dotnetcore2:
+    image: react-dotnetcore2:debug
+    build: 
+      context: .
+      dockerfile: Dockerfile.debug
+    ports: 
+      - 8084:80
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+    volumes:
+      - ./obj/Docker/publish:/app
+      - ~/.nuget/packages:/root/.nuget/packages:ro
+      - ~/clrdbg:/clrdbg:ro
